@@ -12,6 +12,8 @@
     <div id="app">
         {{ msg }}
         <p v-bind:title="titulo"> Teste com Title</p>
+        <p v-if="condicao">Teste com IF</p>
+        <p v-for="registro in registros">{{registro.titulo}}</p>
     </div>
 
     <script type="text/javascript">
@@ -19,7 +21,24 @@
             el: "#app",
             data: {
                 msg: 'Iniciando  com Vue JS',
-                titulo: "Teste com V-Bind"
+                titulo: "Teste com V-Bind",
+                condicao: true,
+                registros: [{
+                        titulo: 'registro1'
+                    },
+                    {
+                        titulo: 'registro2'
+                    },
+                    {
+                        titulo: 'registro3'
+                    },
+                    {
+                        titulo: 'registro4'
+                    },
+                    {
+                        titulo: 'registro5'
+                    },
+                ]
             }
 
         });
