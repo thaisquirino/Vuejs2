@@ -14,6 +14,8 @@
         <p v-bind:title="titulo"> Teste com Title</p>
         <p v-if="condicao">Teste com IF</p>
         <p v-for="registro in registros">{{registro.titulo}}</p>
+        <button v-if="!clicou" v-on:click=usuarioClicou>Salvar</button>
+        <button v-if="clicou" v-on:click="usuarioClicou">aguarde...</button>
     </div>
 
     <script type="text/javascript">
@@ -38,7 +40,13 @@
                     {
                         titulo: 'registro5'
                     },
-                ]
+                ],
+                clicou: false
+            },
+            methods: {
+                usuarioClicou: function () {
+                    this.clicou = !this.clicou;
+                }
             }
 
         });
