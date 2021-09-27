@@ -10,25 +10,22 @@
 <body>
 
     <div id="app">
-        <gui-titulo titulo="Esse é o  Título"></gui-titulo>
+        <gui-titulo v-bind:titulo="meuTitulo"></gui-titulo>
+        <input type="text" v-model="meuTitulo">
 
     </div>
 
     <script type="text/javascript">
         Vue.component('gui-titulo', {
             props: ['titulo'],
-            template: '<h2> {{titulo}}<h2>'
+            template: '<h2>{{titulo}}<h2>'
         });
 
         var app = new Vue({
             el: "#app",
-
-            methods: {
-                usuarioClicou: function () {
-                    this.clicou = !this.clicou;
-                }
+            data: {
+                meuTitulo: 'Essse é o Título'
             }
-
         });
     </script>
 
