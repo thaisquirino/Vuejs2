@@ -13,7 +13,9 @@
         <gui-titulo v-bind:titulo="meuTitulo"></gui-titulo>
         <input type="text" v-model="meuTitulo">
         <gui-tabela v-bind:titulos="['Titulo','Descrição','Link']" v-bind:registros="registros"></gui-tabela>
-
+        <p v-once>{{meuTitulo}}</p>
+        <p v-once>{{html}}</p>
+        <p v-html="html"></p>
 
     </div>
 
@@ -59,7 +61,8 @@
                         descricao: 'descricao3',
                         link: 'link3'
                     }
-                ]
+                ],
+                html: '<a href=""> Esse é um Link </a>'
             }
         });
     </script>
