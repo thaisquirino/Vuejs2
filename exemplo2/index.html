@@ -17,10 +17,13 @@
             <input type="text" v-model="texto">
         </p>
         <p>Textarea:{{textarea}}</p>
-        <p style="white-space:pre-wrap">{{textarea}}</p>
+        <p style="white-space:pre-line">{{textarea}}</p>
         <p>
             <textarea v-model="textarea" rows="8" cols="80"></textarea>
         </p>
+        <p>Checkbox:</p>
+        <input type="checkbox" id="aceitaTermos" v-model="termos">
+        <label for="aceitaTermos ">{{termos}}</label>
 
     </div>
 
@@ -36,7 +39,8 @@
             el: "#app",
             data: {
                 texto: '',
-                textarea: ''
+                textarea: '',
+                termos: false
             }
 
         });
