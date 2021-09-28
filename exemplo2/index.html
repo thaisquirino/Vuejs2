@@ -25,6 +25,44 @@
         <input type="checkbox" id="aceitaTermos" v-model="termos">
         <label for="aceitaTermos ">{{termos}}</label>
 
+        <p>Multiple Checkboxes {{notificacoes}}</p>
+        <p>
+            <input type="checkbox" id="receberEmail" value="email" v-model="notificacoes">
+            <label for="receberEmail">Receber e-mail</label>
+            <input type="checkbox" id="receberSMS" value="sms" V-model="notificacoes">
+            <label for="receberSMS">Receber SMS</label>
+            <input type="checkbox" id="receberCarta" value="carta" V-model="notificacoes">
+            <label for="receberCARTA">Receber Carta </label>
+        </p>
+        <p>
+            <input type="radio" id="Feminino" value="F" v-model="sexo">
+            <label for="Feminino">Feminino</label>
+            <input type="radio" id="Masculino" value="M" v-model="sexo">
+            <label for="Masculino">Masculino</label>
+        </p>
+        <p>
+            Select {{ano}}
+        </p>
+        <p>
+            <select v-model="ano">
+                <option disabled value="">Escolha o ano</option>
+                <option value="2016">Ano 2016</option>
+                <option value="2017">Ano 2017</option>
+                <option value="2021">Ano 2021</option>
+            </select>
+        </p>
+
+        <p>Multiple Selects {{cores}}</p>
+        <p>
+            <select multiple v-model="cores">
+                <option disabled value="">Escolha as cores</option>
+                <option>Rosa</option>
+                <option>Azul</option>
+                <option>Vermelho</option>
+            </select>
+        </p>
+
+
     </div>
 
     <script type="text/javascript">
@@ -40,7 +78,11 @@
             data: {
                 texto: '',
                 textarea: '',
-                termos: false
+                termos: false,
+                notificacoes: [],
+                sexo: null,
+                ano: null,
+                cores: []
             }
 
         });
