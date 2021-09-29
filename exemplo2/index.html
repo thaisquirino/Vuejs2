@@ -52,6 +52,8 @@
             </select>
         </p>
 
+
+
         <p>Multiple Selects {{cores}}</p>
         <p>
             <select multiple v-model="cores">
@@ -61,6 +63,12 @@
                 <option>Vermelho</option>
             </select>
         </p>
+
+        <p> Lazy:{{busca}} </p>
+        <p>
+            <input type="text" v-model.lazy="busca">
+        </p>
+
 
 
     </div>
@@ -82,7 +90,8 @@
                 notificacoes: [],
                 sexo: null,
                 ano: null,
-                cores: []
+                cores: [],
+                busca: ''
             }
 
         });
