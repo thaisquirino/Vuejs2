@@ -1,8 +1,8 @@
 <template>
   <div class="contain">
     <div class="slider">
-      <h3>Ação thais</h3>
-      <span class="handle handPrev active">
+      <h3>Ação </h3>
+      <span v-on:mouseover="scrollEsquerda()" v-on:mouseout="clearScroll" class="handle handPrev active">
         <i class="fa fa-caret-left" aria-hidden="true"></i>
       </span>
       <div id="scroller" class="row">
@@ -21,10 +21,55 @@
               </div>
             </div>
           </div>
+
+ <div class="gui-card">
+            <div class="gui-card__media">
+              <img
+                class="gui-card__img"
+                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
+                alt=""
+              />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Assassin’s Creed
+              </div>
+            </div>
+          </div>
+
+           <div class="gui-card">
+            <div class="gui-card__media">
+              <img
+                class="gui-card__img"
+                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
+                alt=""
+              />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Assassin’s Creed
+              </div>
+            </div>
+          </div>
+           <div class="gui-card">
+            <div class="gui-card__media">
+              <img
+                class="gui-card__img"
+                src="https://img1.ibxk.com.br/2015/11/12/12134915138723.jpg?w=700"
+                alt=""
+              />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Assassin’s Creed
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <span class="handle handleNext active">
+      <span v-on:mouseover="scrollDireita()" v-on:mouseout="clearScroll" class="handle handleNext active">
         <i class="fa fa-caret-right" aria-hidden="true"></i>
       </span>
     </div>
@@ -34,12 +79,24 @@
 <script>
 export default {
   name: "App",
-  data() {
+  data () {
     return {
-      nomeProjeto: " Netflix com Vue",
-    };
+      nomeProjeto: 'Netflix com Vue',
+      intervalo:null
+    }
   },
-};
+ methods:{
+   scrollDireita(){
+   this.intervalo=setInterval(function(){document.getElementById('scroller').scrollLeft += 1},5);
+   },
+   scrollEsquerda(){
+this.intervalo=setInterval(function(){document.getElementById('scroller').scrollLeft -= 1},5);
+   },
+   clearScroll(){
+     clearInterval(this.intervalo);
+   }
+ }
+}
 </script>
 <style lang="scss">
 body,
